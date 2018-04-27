@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab5</title>
+</head>
+<body>
+<h1>Welcome to the Todo List Manager</h1>
+<p>Here you can see all existing tasks:</p>
+    {% if N != 0 %}
+        <p>
+            <ul>
+                {% for i in indici %}
+                    <li>
+                        {{ lista[i] }}
+                        <a href="/deleteTask/{{ IDs[i] }}">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </p>
+    {% else %}
+        <p>Nothing to do here!</p>
+    {% endif %}
+
+<form action="{{ url_for("insert") }}" method="post">
+    <p>
+        New task? Insert it here.
+        <input type="text" name="txtbox" co/>
+        <input type="submit" name="button" value="Insert"/>
+    </p>
+</form>
+
+</body>
+</html>

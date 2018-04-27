@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+{% if codice==0 %}
+<h1>There was an error inserting the new element.</h1>
+<p>It is assumed it was present, already.</p>
+<p>It was the following: {{ task }}</p>
+{% else %}
+<h1>There was an error removing the new element.</h1>
+<p>It was the following: {{ task }}</p>
+<p>
+    <a href="{{ url_for("arrival") }}">Go back</a>
+</p>
+</body>
+</html>
